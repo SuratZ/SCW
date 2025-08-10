@@ -1,4 +1,4 @@
-import { Box, Container, FormControl, Input, TextField, Typography } from '@mui/material';
+import { Box, Button, Container, FormControl, Input, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { Form } from 'react-router';
 
@@ -58,6 +58,7 @@ const VerifiyCert: React.FC = () => {
             <Box sx={{
                 p: 2,
                 width: '100vw',
+                height: '100vh',
                 position: 'relative',
                 left: '50%',
                 right: '50%',
@@ -71,21 +72,43 @@ const VerifiyCert: React.FC = () => {
                     noValidate
                     autoComplete="off"
                 >
-                    <div>
-                        <Typography variant="h6">Verify Certificate</Typography>
-                    </div>
-                    <div>
-                        <TextField
-                            required
-                            id="outlined-required"
-                            label="Name"
-                        />
-                        <TextField
-                            required
-                            id="outlined-required"
-                            label="Code"
-                        />
-                    </div>
+                    <form onSubmit={handleSearch}>
+                        <div>
+                            <Typography variant="h6">Verify Certificate</Typography>
+                        </div>
+                        <div>
+                            <TextField
+                                required
+                                id="certificate-no"
+                                label="Certificate No"
+                                value={code}
+                                onChange={e => setCode(e.target.value)}
+                                name="certificateNo"
+                            />
+                            <TextField
+                                required
+                                id="company-name"
+                                label="Company Name"
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                                name="companyName"
+                            />
+                        </div>
+                        <div>
+                            <Button
+                                variant="contained"
+                                type="submit"
+                                disabled={loading}
+                            >
+                                {loading ? 'Searching...' : 'Search'}
+                            </Button>
+                        </div>
+                        {error && (
+                            <Typography color="error" sx={{ mt: 2 }}>
+                                {error}
+                            </Typography>
+                        )}
+                    </form>
                 </Box>
             </Box>
 
