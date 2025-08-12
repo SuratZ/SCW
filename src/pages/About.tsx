@@ -44,10 +44,7 @@ export default function About() {
                             ml: 12,
                             mr: 12,
                         }}>
-                        This is a demo paragraph. Replace this text with your own content to describe your organization, mission, or any other relevant information you wish to share on the About page.
-                        <br />
-                        <br />
-                        At SCG, our journey began with a simple yet powerful vision: to create meaningful impact through innovative solutions and unwavering commitment to excellence. Over the years, we have grown into a dynamic organization that values integrity, collaboration, and continuous improvement. Our team is composed of passionate professionals who bring diverse perspectives and expertise, enabling us to tackle challenges creatively and deliver outstanding results for our clients.
+                        At SCW, our journey began with a simple yet powerful vision: to create meaningful impact through innovative solutions and unwavering commitment to excellence. Over the years, we have grown into a dynamic organization that values integrity, collaboration, and continuous improvement. Our team is composed of passionate professionals who bring diverse perspectives and expertise, enabling us to tackle challenges creatively and deliver outstanding results for our clients.
                         <br />
                         <br />
                         We understand that every client is unique, and we take pride in offering personalized services tailored to specific needs. By fostering open communication and building strong relationships, we ensure that our clients feel supported at every step of their journey. Our approach is rooted in transparency and accountability, which allows us to build trust and achieve sustainable success together.

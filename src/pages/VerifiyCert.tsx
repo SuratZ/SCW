@@ -58,7 +58,7 @@ const VerifiyCert: React.FC = () => {
             <Box sx={{
                 p: 2,
                 width: '100vw',
-                height: '100vh',
+                height: '75vh',
                 position: 'relative',
                 left: '50%',
                 right: '50%',

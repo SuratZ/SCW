@@ -13,7 +13,7 @@ const Footer: React.FC = () => (
             bottom: 0,
             zIndex: 100,
         }}>
-            © {new Date().getFullYear()} SCG Certification. All rights reserved.
+            © {new Date().getFullYear()} SCW Certification. All rights reserved.
         </footer>
         <div style={{ height: '56px' }} />
     </>

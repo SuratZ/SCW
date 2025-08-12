@@ -13,18 +13,18 @@ export default function NavBar() {
                     component={RouterLink}
                     to="/home"
                     sx={{ minWidth: 0, p: 0, display: 'flex', alignItems: 'center' }}
-                    aria-label="SCG Home"
+                    aria-label="SCW Home"
                 >
                     <LogoDev fontSize="large" color="inherit" />
                     <Typography variant="h6" component="span" sx={{ ml: 1 }}>
-                        SCG Certification
+                        SCW Certification
                     </Typography>
                 </Button>
             </Box>
             <Box sx={{ flex: 6, display: 'flex', alignItems: 'center', gap: 2, justifyContent: 'center' }}>
                 <Button color="inherit" component={RouterLink} to="/about">About us</Button>
                 |
-                <Button color="inherit" component={RouterLink} to="/service">Service</Button>
+                <Button color="inherit" component={RouterLink} to="/certificate">Certificate</Button>
                 |
                 <Button color="inherit" component={RouterLink} to="/verify-cert">Verify Certification</Button>
                 |
