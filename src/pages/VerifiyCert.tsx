@@ -55,10 +55,12 @@ const VerifiyCert: React.FC = () => {
             textAlign: 'center',
             mt: 4
         }}>
+            <Typography color="text.primary" variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 2}} >
+                                Verify Certificate
+            </Typography>
             <Box sx={{
-                p: 2,
                 width: '100vw',
-                height: '75vh',
+                minHeight: '70vh',
                 position: 'relative',
                 left: '50%',
                 right: '50%',
@@ -73,9 +75,6 @@ const VerifiyCert: React.FC = () => {
                     autoComplete="off"
                 >
                     <form onSubmit={handleSearch}>
-                        <div>
-                            <Typography variant="h6">Verify Certificate</Typography>
-                        </div>
                         <div>
                             <TextField
                                 required
