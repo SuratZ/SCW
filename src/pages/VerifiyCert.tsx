@@ -44,7 +44,7 @@ const VerifiyCert: React.FC = () => {
         }
 
         setLoading(true);
-        try {
+
             const found = data.find(
                 (row) =>
                     (
@@ -55,27 +55,8 @@ const VerifiyCert: React.FC = () => {
             );
             setResult(found || null);
 
-            // Assuming first row is header
-            // const [header, ...rows] = data.values;
-            // const filtered = rows
-            //     .map((row: string[]) =>
-            //         header.reduce((obj: any, key: string, idx: number) => {
-            //             obj[key.toLowerCase()] = row[idx] || '';
-            //             return obj;
-            //         }, {})
-            //     )
-            //     .filter(
-            //         (row: SheetData) =>
-            //             row.code?.toLowerCase() === code.toLowerCase() &&
-            //             row.name?.toLowerCase() === name.toLowerCase()
-            //     );
-
-            // setResult(filtered);
-        } catch (error) {
-            setError('Failed to fetch data.');
-        } finally {
             setLoading(false);
-        }
+        
     };
 
     useEffect(() => {
@@ -86,31 +67,24 @@ const VerifiyCert: React.FC = () => {
                     setData(filterData)});
     }, []);
 
-    // useEffect(() => {
-    //     if (data) {
-    //         // Process the data if needed
-    //         setData(filterData);
-    //     }
-    // }, [data]);
-
     return (
         <Container sx={{
             textAlign: 'center',
-            mt: 4
+            minWidth: '100vw',
+            minHeight: '87vh',
+            width: '100vw',
+            height: '87vh',
+            background: 'linear-gradient(to bottom, #ffffff 0%, #e3f2fd 100%)',
+            display: 'flex',
+            flexDirection: 'column',
         }}>
-            <Typography color="text.primary" variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 2}} >
-                                Verify Certificate
-            </Typography>
-            <Box sx={{
-                width: '100vw',
-                minHeight: '70vh',
-                position: 'relative',
-                left: '50%',
-                right: '50%',
-                ml: '-50vw',
-                mr: '-50vw',
-                boxShadow: 1
+            <Container sx={{
+                textAlign: 'center',
+                mt: 4
             }}>
+                <Typography color="text.primary" variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 2}} >
+                                    Verify Certificate
+                </Typography>
                 <Box
                     component="form"
                     sx={{ '& .MuiTextField-root': { m: 1, width: '40ch' } }}
@@ -191,9 +165,8 @@ const VerifiyCert: React.FC = () => {
                         </Typography>
                     )}
                 </Box>
-                <Box sx={{ mt: 2 }}>
                     {result && (
-                        <div className="mt-5 border p-3 rounded bg-gray-50">
+                        <Container sx={{ mt: 5 ,border: '1px solid #ccc', padding: '16px', borderRadius: '8px', backgroundColor: '#ffffff'}}>
                             <Box>
                                 <TextField
                                     label="Company Name"
@@ -205,7 +178,7 @@ const VerifiyCert: React.FC = () => {
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '35ch'
+                                        mb: 2, mr: 2, width: '36ch'
                                     }}
                                 />
                                 <TextField
@@ -236,10 +209,7 @@ const VerifiyCert: React.FC = () => {
                                     }}
                                 />
                             </Box>
-                            
-                            <Box>
-
-                            </Box>
+                        
                             <Box>
                                 <TextField
                                     label="Scope"
@@ -296,8 +266,8 @@ const VerifiyCert: React.FC = () => {
                                     }}
                                 />
                             </Box>
-                            <Box>
-                                <TextField
+                            <Box sx={{backgroundColor: result.status === 'Active' ? '#d4edda' : '#f8d7da', padding: '8px', borderRadius: '4px'}}>
+                                {/* <TextField
                                     label="Status"
                                     value={result.status}
                                     variant="standard"
@@ -307,17 +277,17 @@ const VerifiyCert: React.FC = () => {
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '30ch'
+                                        mb: 2, mr: 2, width: '10ch'
                                     }}
-                                />
+                                /> */}
+                                <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
+                                    Status: {result.status}
+                                </Typography>
                             </Box>
-                        </div>
+                        </Container>
                     )}
-                </Box>
-            </Box>
-
+            </Container>
         </Container>
-
     );
 };
 

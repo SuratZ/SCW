@@ -10,45 +10,59 @@ const isoCertifications = [
       ];
 export default function Certification() {
   return (
-    <Container
+    <Container 
+      sx={{
+        textAlign: 'center',
+        minWidth: '100vw',
+        minHeight: '87vh',
+        width: '100vw',
+        height: '87vh',
+        background: 'linear-gradient(to bottom, #ffffff 0%, #e3f2fd 100%)',
+        display: 'flex',
+        flexDirection: 'column',
+      }}
+    >
+      <Container
       sx={{
         textAlign: 'center',
         mt: 4,
       }}
-    >
-      <Typography color="text.primary" variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 2}} >
-        We provide ISO certifications and others.
-      </Typography>
-      <Grid container spacing={3} justifyContent="center">
-        {isoCertifications.map(cert => (
-          // <Grid item xs={12} sm={6} md={4} key={cert.id}>
-            <Card>
-                <CardContent>
-                <CardMedia
-                  component="img"
-                  sx={{
-                    height: 120,
-                    objectFit: 'contain',
-                  }}
-                  image={`./images/certifications/${cert.image.replace(/\s+/g, '').toLowerCase()}.png`}
-                  alt={cert.name}
-                />
-                <Typography variant="h5" component="div">
-                  {cert.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {cert.description}
-                </Typography>
-                </CardContent>
-              {/* <CardActions>
-                <Button size="small" variant="contained" color="primary">
-                  Declare
-                </Button>
-              </CardActions> */}
-            </Card>
-          // </Grid>
-        ))}
-      </Grid>
+      >
+        <Typography color="text.primary" variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 2}} >
+          We provide ISO certifications and others.
+        </Typography>
+        <Grid container spacing={3} justifyContent="center" sx={{ mt: 12 }}>
+          {isoCertifications.map((cert) => (
+            // <Grid item xs={12} sm={6} md={4} key={cert.id}>
+              <Card key={cert.id}>
+                  <CardContent>
+                  <CardMedia
+                    component="img"
+                    sx={{
+                      height: 120,
+                      objectFit: 'contain',
+                    }}
+                    image={`./images/certifications/${cert.image.replace(/\s+/g, '').toLowerCase()}.png`}
+                    alt={cert.name}
+                  />
+                  <Typography variant="h5" component="div">
+                    {cert.name}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {cert.description}
+                  </Typography>
+                  </CardContent>
+                {/* <CardActions>
+                  <Button size="small" variant="contained" color="primary">
+                    Declare
+                  </Button>
+                </CardActions> */}
+              </Card>
+            // </Grid>
+          ))}
+        </Grid>
+      </Container>
     </Container>
+    
   );
 }
