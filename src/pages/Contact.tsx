@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from '@mui/material';
+import { Container, Typography } from '@mui/material';
 import { Box, Paper } from '@mui/material';
 
 export default function Contact() {

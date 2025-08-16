@@ -120,11 +120,11 @@ const VerifiyCert: React.FC = () => {
                     <Autocomplete
                         freeSolo
                         value={query}
-                        onChange={(event: any, newValue: string | null) => {
+                        onChange={(_, newValue: string | null) => {
                             setQuery(newValue);
                         }}
                         inputValue={inputValue}
-                        onInputChange={(event, newInputValue) => {
+                        onInputChange={(_, newInputValue) => {
                             setInputValue(newInputValue);
                             setQuery(newInputValue);
                         }}
