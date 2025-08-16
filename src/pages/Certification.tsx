@@ -30,7 +30,7 @@ export default function Certification() {
                     height: 120,
                     objectFit: 'contain',
                   }}
-                  image={`/src/images/certifications/${cert.image.replace(/\s+/g, '').toLowerCase()}.png`}
+                  image={`./images/certifications/${cert.image.replace(/\s+/g, '').toLowerCase()}.png`}
                   alt={cert.name}
                 />
                 <Typography variant="h5" component="div">
