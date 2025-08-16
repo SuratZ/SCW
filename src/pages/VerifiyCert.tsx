@@ -178,12 +178,12 @@ const VerifiyCert: React.FC = () => {
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '36ch'
+                                        mb: 2, mr: 2, width: '34ch'
                                     }}
                                 />
                                 <TextField
                                 label="Certificate No."
-                                value={result.serialNoEng || result.serialNoThai}
+                                value={`${result.serialNoEng || result.serialNoThai}`}
                                 variant="standard"
                                 slotProps={{
                                     input: {
@@ -192,7 +192,7 @@ const VerifiyCert: React.FC = () => {
                                 }}
                                 
                                 sx={{
-                                    mb: 2, mr: 2, width: '10ch'
+                                    mb: 2, mr: 2, width: '12ch'
                                 }}
                                 />
                                 <TextField
