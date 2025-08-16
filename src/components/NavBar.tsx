@@ -11,7 +11,7 @@ export default function NavBar() {
                 <Button
                     color="inherit"
                     component={RouterLink}
-                    to="/home"
+                    to="/"
                     sx={{ minWidth: 0, p: 0, display: 'flex', alignItems: 'center' }}
                     aria-label="SCW Home"
                 >
