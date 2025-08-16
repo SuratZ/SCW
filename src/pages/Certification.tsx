@@ -5,8 +5,8 @@ const isoCertifications = [
         { id: 3, image: 'iso',name: 'ISO 14001:2015', description: 'Environmental Management Systems' },
         { id: 4, image: 'iso',name: 'ISO 22000:2018', description: 'Food Safety Management Systems' },
         { id: 5, image: 'iso',name: 'ISO 45001:2018', description: 'Occupational Health and Safety Management' },
-        { id: 6, image: 'fssc',name: 'FSSC 22000 v6.0', description: '' },
-        { id: 7, image: 'safety',name: 'GHPs/HACCP', description: '' },
+        { id: 6, image: 'cert',name: 'FSSC 22000', description: '' },
+        { id: 7, image: 'cert',name: 'GHPs/HACCP', description: '' },
       ];
 export default function Certification() {
   return (
