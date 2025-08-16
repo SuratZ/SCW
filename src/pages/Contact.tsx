@@ -63,7 +63,16 @@ export default function Contact() {
             Prachauthit Road Tungkru Subdistrict <br/>
             Tungkru District Bangkok 10400, Thailand
           </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+            <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1 }}>
+              <Box component="span" sx={{ display: 'flex', alignItems: 'center', mr: 1 }}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" style={{ verticalAlign: 'middle' }}>
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path fill="currentColor" d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 100-8 4 4 0 000 8z"/>
+                </svg>
+              </Box>
+              Chanyaporn Wattanakitcharoenman
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1 }}>
             <Box component="span" sx={{ display: 'flex', alignItems: 'center', mr: 1 }}>
               <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" style={{ verticalAlign: 'middle' }}>
               <path d="M0 0h24v24H0z" fill="none"/>
@@ -87,7 +96,7 @@ export default function Contact() {
               <Box component="span" sx={{ display: 'flex', alignItems: 'center', mr: 1 }}>
                 <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" style={{ verticalAlign: 'middle' }}>
                   <path d="M0 0h24v24H0z" fill="none"/>
-                  <path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 17 22 12z"/>
+                  <path fill="#143cb6ff" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 17 22 12z"/>
                 </svg>
               </Box>
               <a
@@ -97,6 +106,23 @@ export default function Contact() {
                 style={{ color: 'inherit', textDecoration: 'none' }}
               >
                 scwinternational
+              </a>
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1 }}>
+              <Box component="span" sx={{ display: 'flex', alignItems: 'center', mr: 1 }}>
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 48 48" width="20" style={{ verticalAlign: 'middle' }}>
+                  <circle cx="24" cy="24" r="24" fill="#06C755"/>
+                  <path fill="#fff" d="M24 13c-6.63 0-12 3.94-12 8.8 0 3.1 2.36 5.81 5.93 7.36-.25.87-.91 3.13-1.04 3.62-.16.62.23.61.48.44.2-.13 3.21-2.13 4.52-3.01.7.1 1.43.15 2.11.15 6.63 0 12-3.94 12-8.8S30.63 13 24 13z"/>
+                  <path fill="#06C755" d="M18.5 23.5h-2v-5h2v5zm4.5 0h-2v-5h2v5zm4.5 0h-2v-5h2v5zm4.5 0h-2v-5h2v5z"/>
+                </svg>
+              </Box>
+              <a
+                // href="https://line.me/ti/p/0816455821"
+                // target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: 'inherit', textDecoration: 'none' }}
+              >
+                Line: 0816455821
               </a>
             </Typography>
         </Paper>
