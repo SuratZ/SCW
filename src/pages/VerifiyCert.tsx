@@ -84,7 +84,7 @@ const VerifiyCert: React.FC = () => {
                     </Typography>
                     <Box
                         component="form"
-                        sx={{ '& .MuiTextField-root': { m: 1, width: '40ch' } }}
+                        sx={{ '& .MuiTextField-root': { m: 1, width: '35ch' } }}
                         noValidate
                         onSubmit={handleSearch}
                     >
