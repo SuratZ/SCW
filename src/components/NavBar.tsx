@@ -62,9 +62,16 @@ export default function NavBar() {
         <Typography
           variant="h6"
           component="span"
-          sx={{ ml: 1, display: { xs: 'none', sm: 'inline' } }}
+          sx={{
+            ml: 1,
+          }}
         >
-          SCW Certification
+          <Box component="span" sx={{ display: { xs: 'inline', sm: 'inline', md: 'none' } }}>
+            SCW
+          </Box>
+          <Box component="span" sx={{ display: { xs: 'none', sm: 'none', md: 'inline' } }}>
+            SCW Certification
+          </Box>
         </Typography>
         </Button>
       </Box>
