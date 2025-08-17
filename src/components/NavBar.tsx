@@ -1,6 +1,5 @@
 import { LogoDev } from "@mui/icons-material";
-import { AppBar, Toolbar, Typography, Button, Box, List, ListItem, ListItemText } from "@mui/material";
-import { useState } from "react";
+import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
 import { Link as RouterLink } from 'react-router-dom';
 
 const menuItems = [
