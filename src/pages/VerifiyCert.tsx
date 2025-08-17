@@ -21,7 +21,7 @@ type SheetData = {
 // const GOOGLE_SHEET_API_URL = 'https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Sheet1?key=YOUR_API_KEY';
 const sheetId = '1O6uJI7KtabX3XVPrlwT8_GTe1OaM_Ldm22RkMiq-c_g'; // replace with your Google Sheet ID
 const GOOGLE_SHEET_API_URL =
-  `https://opensheet.elk.sh/${sheetId}/Sheet1`; // change to your ID
+    `https://opensheet.elk.sh/${sheetId}/Sheet1`; // change to your ID
 
 const VerifiyCert: React.FC = () => {
     const [query, setQuery] = useState<string | null>('');
@@ -45,155 +45,179 @@ const VerifiyCert: React.FC = () => {
 
         setLoading(true);
 
-            const found = data.find(
-                (row) =>
-                    (
-                        row.serialNoEng?.trim().toLowerCase().includes(query.toLowerCase()) ||
-                        row.serialNoThai?.trim().toLowerCase().includes(query.toLowerCase()) ||
-                        row.customerName?.toLowerCase().includes(query.toLowerCase())
-                    )
-            );
-            setResult(found || null);
+        const found = data.find(
+            (row) =>
+            (
+                row.serialNoEng?.trim().toLowerCase().includes(query.toLowerCase()) ||
+                row.serialNoThai?.trim().toLowerCase().includes(query.toLowerCase()) ||
+                row.customerName?.toLowerCase().includes(query.toLowerCase())
+            )
+        );
+        setResult(found || null);
 
-            setLoading(false);
-        
+        setLoading(false);
+
     };
 
     useEffect(() => {
-            fetch(GOOGLE_SHEET_API_URL)
-                .then((res) => res.json())
-                .then((rows) => {
-                    const filterData = rows.filter((row: SheetData) => row.serialNoEng || row.serialNoThai || row.customerName);
-                    setData(filterData)});
+        fetch(GOOGLE_SHEET_API_URL)
+            .then((res) => res.json())
+            .then((rows) => {
+                const filterData = rows.filter((row: SheetData) => row.serialNoEng || row.serialNoThai || row.customerName);
+                setData(filterData)
+            });
     }, []);
 
     return (
-        <Container sx={{
-            textAlign: 'center',
-            minWidth: '100vw',
-            minHeight: '87vh',
-            width: '100vw',
-            height: '87vh',
-            background: 'linear-gradient(to bottom, #ffffff 0%, #e3f2fd 100%)',
-            display: 'flex',
-            flexDirection: 'column',
-        }}>
-            <Container sx={{
-                textAlign: 'center',
-                mt: 4
+        <>
+            <Box sx={{
+                backgroundColor: '#ffffff',
+                display: "flex",
+                alignItems: "center", // vertical centering
             }}>
-                <Typography color="text.primary" variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 2}} >
-                                    Verify Certificate
-                </Typography>
-                <Box
-                    component="form"
-                    sx={{ '& .MuiTextField-root': { m: 1, width: '40ch' } }}
-                    noValidate
-                    onSubmit={handleSearch}
-                >
-                    <Autocomplete
-                        freeSolo
-                        value={query}
-                        onChange={(_, newValue: string | null) => {
-                            setQuery(newValue);
-                        }}
-                        inputValue={inputValue}
-                        onInputChange={(_, newInputValue) => {
-                            setInputValue(newInputValue);
-                            setQuery(newInputValue);
-                        }}
-                        id="controllable-states"
-                        options={
-                            // Only show unique customer names in dropdown
-                            Array.from(
-                                new Set(
-                                    data
-                                        .map((row) => row.customerName)
-                                        .filter(Boolean)
-                                )
-                            )
-                        }
-                        filterOptions={(options, state) => {
-                            // Show suggestions if input matches customerName or certNo
-                            const input = state.inputValue.trim().toLowerCase();
-                            if (!input) return options;
-                            // Find rows matching either customerName or certNo
-                            const matchedRows = data.filter(
-                                (row) =>
-                                    row.customerName?.toLowerCase().includes(input) ||
-                                    row.serialNoEng?.toLowerCase().includes(input) ||
-                                    row.serialNoThai?.toLowerCase().includes(input)
-                            );
-                            // Return unique customer names from matched rows
-                            return Array.from(
-                                new Set(
-                                    matchedRows
-                                        .map((row) => row.customerName)
-                                        .filter(Boolean)
-                                )
-                            );
-                        }}
-                        renderInput={(params) => (
-                            <TextField
-                                {...params}
-                                label="Certificate No or Customer Name"
-                                placeholder="Enter certificate no or customer name"
-                            />
-                        )}
-                    />
-                    <Button
-                        variant="contained"
-                        type='submit'
-                        disabled={loading}
-                        sx={{
-                            mt: 2,
-                            mb: 2,
-                            minWidth: 120,
-                            minHeight: 40,
-                            pt: 0.5,
-                            pl: 2,
-                            pr: 2,
-                            pb: 0,
-                            textTransform: 'none',
-                        }}
+                <Container sx={{
+                    textAlign: 'center',
+                    mt: 4
+                }}>
+                    <Typography color="text.primary" variant="h6" gutterBottom sx={{ fontWeight: 'bold', mb: 2 }} >
+                        Verify Certificate
+                    </Typography>
+                    <Box
+                        component="form"
+                        sx={{ '& .MuiTextField-root': { m: 1, width: '40ch' } }}
+                        noValidate
+                        onSubmit={handleSearch}
                     >
-                        Search
-                    </Button>
-                    {error && (
-                        <Typography color="error" sx={{ mt: 2 }}>
-                            {error}
-                        </Typography>
-                    )}
-                </Box>
+                        <Autocomplete
+                            freeSolo
+                            value={query}
+                            onChange={(_, newValue: string | null) => {
+                                setQuery(newValue);
+                            }}
+                            inputValue={inputValue}
+                            onInputChange={(_, newInputValue) => {
+                                setInputValue(newInputValue);
+                                setQuery(newInputValue);
+                            }}
+                            id="controllable-states"
+                            options={
+                                // Only show unique customer names in dropdown
+                                Array.from(
+                                    new Set(
+                                        data
+                                            .map((row) => row.customerName)
+                                            .filter(Boolean)
+                                    )
+                                )
+                            }
+                            filterOptions={(options, state) => {
+                                // Show suggestions if input matches customerName or certNo
+                                const input = state.inputValue.trim().toLowerCase();
+                                if (!input) return options;
+                                // Find rows matching either customerName or certNo
+                                const matchedRows = data.filter(
+                                    (row) =>
+                                        row.customerName?.toLowerCase().includes(input) ||
+                                        row.serialNoEng?.toLowerCase().includes(input) ||
+                                        row.serialNoThai?.toLowerCase().includes(input)
+                                );
+                                // Return unique customer names from matched rows
+                                return Array.from(
+                                    new Set(
+                                        matchedRows
+                                            .map((row) => row.customerName)
+                                            .filter(Boolean)
+                                    )
+                                );
+                            }}
+                            renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    label="Certificate No or Customer Name"
+                                    placeholder="Enter certificate no or customer name"
+                                />
+                            )}
+                        />
+                        <Button
+                            variant="contained"
+                            type='submit'
+                            disabled={loading}
+                            sx={{
+                                mt: 2,
+                                mb: 2,
+                                minWidth: 120,
+                                minHeight: 40,
+                                pt: 0.5,
+                                pl: 2,
+                                pr: 2,
+                                pb: 0,
+                                textTransform: 'none',
+                            }}
+                        >
+                            Search
+                        </Button>
+                        {error && (
+                            <Typography color="error" sx={{ mt: 2 }}>
+                                {error}
+                            </Typography>
+                        )}
+                    </Box>
+                </Container>
+            </Box>
+            <Box
+                sx={{
+                    background: 'linear-gradient(to bottom, #ffffff 0%, #e3f2fd 100%)',
+                    display: "flex",
+                    minHeight: "55vh"
+                }}
+            >
+                <Container
+                    sx={{
+                        textAlign: 'center',
+                        pb: 10
+                    }}
+                >
                     {result && (
-                        <Container sx={{ mt: 5 ,border: '1px solid #ccc', padding: '16px', borderRadius: '8px', backgroundColor: '#ffffff'}}>
-                            <Box>
+                        <Container sx={{ mt: 2, border: '1px solid #ccc', padding: '16px', borderRadius: '8px', backgroundColor: '#ffffff' }}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: { xs: 'column', sm: 'row' },
+                                    flexWrap: 'wrap',
+                                    gap: 2,
+                                    mb: 2,
+                                    alignItems: { sm: 'flex-end' },
+                                }}
+                            >
                                 <TextField
                                     label="Company Name"
                                     value={result.customerName}
                                     variant="standard"
                                     slotProps={{
                                         input: {
-                                        readOnly: true,
+                                            readOnly: true,
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '34ch'
+                                        mb: { xs: 2, sm: 0 },
+                                        mr: { xs: 0, sm: 2 },
+                                        width: { xs: '100%', sm: '60ch' },
                                     }}
                                 />
                                 <TextField
-                                label="Certificate No."
-                                value={`${result.serialNoEng || result.serialNoThai}`}
-                                variant="standard"
-                                slotProps={{
-                                    input: {
-                                    readOnly: true,
-                                    },
-                                }}
-                                
-                                sx={{
-                                    mb: 2, mr: 2, width: '12ch'
-                                }}
+                                    label="Certificate No."
+                                    value={`${result.serialNoEng || result.serialNoThai}`}
+                                    variant="standard"
+                                    slotProps={{
+                                        input: {
+                                            readOnly: true,
+                                        },
+                                    }}
+                                    sx={{
+                                        mb: { xs: 2, sm: 0 },
+                                        mr: { xs: 0, sm: 2 },
+                                        width: { xs: '100%', sm: '12ch' },
+                                    }}
                                 />
                                 <TextField
                                     label="Standard"
@@ -201,42 +225,62 @@ const VerifiyCert: React.FC = () => {
                                     variant="standard"
                                     slotProps={{
                                         input: {
-                                        readOnly: true,
+                                            readOnly: true,
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '15ch'
+                                        mb: { xs: 2, sm: 0 },
+                                        mr: { xs: 0, sm: 2 },
+                                        width: { xs: '100%', sm: '15ch' },
                                     }}
                                 />
                             </Box>
-                        
-                            <Box>
+
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    gap: 2,
+                                    mb: 2,
+                                }}
+                            >
                                 <TextField
                                     label="Scope"
                                     value={result.scopeOfCert}
                                     variant="standard"
                                     slotProps={{
                                         input: {
-                                        readOnly: true,
+                                            readOnly: true,
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '65ch'
+                                        width: '100%',
                                     }}
                                 />
                             </Box>
-                            <Box>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: { xs: 'column', sm: 'row' },
+                                    flexWrap: 'wrap',
+                                    gap: 2,
+                                    mb: 2,
+                                    alignItems: { sm: 'flex-end' },
+                                }}
+                            >
                                 <TextField
                                     label="Initial Registration Date"
                                     value={result.initialRegistrationDate}
                                     variant="standard"
                                     slotProps={{
                                         input: {
-                                        readOnly: true,
+                                            readOnly: true,
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '20ch'
+                                        mb: { xs: 2, sm: 0 },
+                                        mr: { xs: 0, sm: 2 },
+                                        width: { xs: '100%', sm: '20ch' },
                                     }}
                                 />
                                 <TextField
@@ -245,11 +289,13 @@ const VerifiyCert: React.FC = () => {
                                     variant="standard"
                                     slotProps={{
                                         input: {
-                                        readOnly: true,
+                                            readOnly: true,
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '22ch'
+                                        mb: { xs: 2, sm: 0 },
+                                        mr: { xs: 0, sm: 2 },
+                                        width: { xs: '100%', sm: '22ch' },
                                     }}
                                 />
                                 <TextField
@@ -258,36 +304,27 @@ const VerifiyCert: React.FC = () => {
                                     variant="standard"
                                     slotProps={{
                                         input: {
-                                        readOnly: true,
+                                            readOnly: true,
                                         },
                                     }}
                                     sx={{
-                                        mb: 2, mr: 2, width: '20ch'
+                                        mb: { xs: 2, sm: 0 },
+                                        mr: { xs: 0, sm: 2 },
+                                        width: { xs: '100%', sm: '20ch' },
                                     }}
                                 />
                             </Box>
-                            <Box sx={{backgroundColor: result.status === 'Active' ? '#d4edda' : '#f8d7da', padding: '8px', borderRadius: '4px'}}>
-                                {/* <TextField
-                                    label="Status"
-                                    value={result.status}
-                                    variant="standard"
-                                    slotProps={{
-                                        input: {
-                                        readOnly: true,
-                                        },
-                                    }}
-                                    sx={{
-                                        mb: 2, mr: 2, width: '10ch'
-                                    }}
-                                /> */}
+                            <Box sx={{ backgroundColor: result.status === 'Active' ? '#d4edda' : '#f8d7da', padding: '8px', borderRadius: '4px' }}>
                                 <Typography variant="body1" sx={{ fontWeight: 'bold' }}>
                                     Status: {result.status}
                                 </Typography>
                             </Box>
                         </Container>
                     )}
-            </Container>
-        </Container>
+                </Container>
+            </Box>
+        </>
+
     );
 };
 
