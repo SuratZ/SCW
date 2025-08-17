@@ -1,11 +1,12 @@
 import { LogoDev } from "@mui/icons-material";
-import { AppBar, Toolbar, Typography, Button, Box } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Box, Drawer } from "@mui/material";
 import { Link as RouterLink } from 'react-router-dom';
+import { useState } from "react";
 
 const menuItems = [
   {
     label: "About us",
-    path: "/about"
+    path: "/about",
   },
   {
     label: "Certificate",
@@ -21,27 +22,31 @@ const menuItems = [
   }
 ];
 
-  // const [mobileOpen, setMobileOpen] = useState(false);
-
-  // const handleDrawerToggle = () => {
-  //   setMobileOpen(!mobileOpen);
-  // };
-
-  // const drawer = (
-  //   <Box sx={{ width: 250 }} role="presentation" onClick={handleDrawerToggle}>
-  //     <List>
-  //       {menuItems.map((item) => (
-  //         <ListItem key={item.label} component={RouterLink} to={item.path}>
-  //           <ListItemText primary={item.label} />
-  //         </ListItem>
-  //       ))}
-  //     </List>
-  //   </Box>
-  // );
-
-
 
 export default function NavBar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
+  const DrawerList = (
+    <Box sx={{ width: 250 }} role="presentation" onClick={() => setMobileOpen(false)}>
+      <Typography variant="h6" sx={{ p: 2 }}>
+        Menu
+      </Typography>
+   
+        {menuItems.map((item,index) => (
+          <Box key={index} pb={2} pl={2}>
+            <Button key={item.label} color="inherit" component={RouterLink} to={item.path}>
+              {item.label}
+            </Button>
+          </Box>
+        ))}
+    </Box>
+  );
+
+  
   return (
     <AppBar position="sticky">
       <Toolbar>
@@ -82,19 +87,27 @@ export default function NavBar() {
       {/* Mobile menu */}
       <Box sx={{ flex: 6, display: { xs: 'flex', md: 'none' }, justifyContent: 'center' }}>
         <Button
-        color="inherit"
-        aria-label="menu"
-        sx={{ minWidth: 0 }}
-        onClick={() => {
-          // Implement mobile menu open logic here
-        }}
+          color="inherit"
+          aria-label="menu"
+          sx={{ minWidth: 0 }}
+          onClick={handleDrawerToggle}
         >
-        <span style={{ fontSize: 24 }}>☰</span>
+          <span style={{ fontSize: 24 }}>☰</span>
         </Button>
       </Box>
       <Box sx={{ flex: 3, display: 'flex', justifyContent: 'flex-end' }}>
         {/* <Button color="inherit">Login</Button> */}
       </Box>
+      <Drawer
+        anchor="left"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true,
+        }}
+      >
+        {DrawerList}
+      </Drawer>
       </Toolbar>
     </AppBar>
   );

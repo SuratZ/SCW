@@ -30,14 +30,14 @@ export default function About() {
                     backgroundColor: '#ffffff',
                     boxShadow: 1,
                     zIndex: 0,
-                    pl: 10,
-                    pr: 10,
+                    pl: { xs: 1, sm: 10 },
+                    pr: { xs: 1, sm: 10 },
                     pb: 4               
                 }}
             >
                 <Container
                     sx={{
-                        p: 4,
+                        p: { xs: 1, sm: 4 },
                         // ml: 10,
                         // mr: 10,
                     }}
