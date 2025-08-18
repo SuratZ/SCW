@@ -323,6 +323,14 @@ const VerifiyCert: React.FC = () => {
                     )}
                 </Container>
             </Box>
+            <Box
+                sx={{
+                    background: 'linear-gradient(to top, #ffffff 0%, #e3f2fd 100%)',
+                    display: "flex",
+                    height: "10vh",
+                    // minHeight: "100%"
+                }}
+            ></Box>
         </>
 
     );

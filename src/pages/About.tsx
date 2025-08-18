@@ -32,7 +32,7 @@ export default function About() {
                     zIndex: 0,
                     pl: { xs: 1, sm: 10 },
                     pr: { xs: 1, sm: 10 },
-                    pb: 4               
+                    pb: 0               
                 }}
             >
                 <Container
@@ -56,6 +56,14 @@ export default function About() {
                     </Typography>
                 </Container>
             </Box>
+            <Box
+                sx={{
+                    background: 'linear-gradient(to top, #ffffff 0%, #e3f2fd 100%)',
+                    display: "flex",
+                    height: "10vh",
+                    // minHeight: "100%"
+                }}
+            ></Box>
         </>
 
     );
