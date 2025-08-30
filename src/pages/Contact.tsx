@@ -1,7 +1,9 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Card, Container, Grid, Typography } from '@mui/material';
 import { Box, Paper } from '@mui/material';
 
 export default function Contact() {
+  const contactName = "SCW International Certification Co., Ltd.";
+  const contactOwner = "Chanyaporn Wattanakitcharoenman";
   return (
     <Box sx={{
           background: 'linear-gradient(to bottom, #ffffff 0%, #e3f2fd 100%)',
@@ -65,7 +67,7 @@ export default function Contact() {
               }}
             >
               <Typography variant="h5" gutterBottom>
-                SCW International Certification Co., Ltd.
+                {contactName}
               </Typography>
               <Typography variant="body1" gutterBottom>
                 85/939 Soi Prachauthit 79, <br/>
@@ -79,7 +81,7 @@ export default function Contact() {
                       <path fill="currentColor" d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 100-8 4 4 0 000 8z"/>
                     </svg>
                   </Box>
-                  Chanyaporn Wattanakitcharoenman
+                  {contactOwner}
                 </Typography>
                 <Typography variant="body2" color="text.secondary" sx={{ display: 'flex', alignItems: 'center', gap: 1, mt: 1 }}>
                 <Box component="span" sx={{ display: 'flex', alignItems: 'center', mr: 1 }}>
@@ -138,6 +140,56 @@ export default function Contact() {
             </Grid>
           </Grid>
         </Box>
+
+        <Box
+            sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'stretch',
+            mt: 4,
+            mb: 4,
+            gap: 2,
+          }}
+        >
+          <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 2, md: 2 }}>
+            <Grid size={{ xs: 1, sm: 1, md: 1 }}>
+              <Card>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                  <a
+                    href="https://www.facebook.com/scwinternational"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}
+                    aria-label="Facebook"
+                  >
+                  <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24" width="32">
+                      <path d="M0 0h24v24H0z" fill="none"/>
+                      <path fill="#143cb6ff" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 17 22 12z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <Typography variant="body2" sx={{ ml: 1 }}>
+                      scwinternational
+                    </Typography>
+                  </div>
+                  </a>
+                </Box>
+              </Card>
+            </Grid>
+            <Grid size={{ xs: 1, sm: 1, md: 1 }}>
+              <Card>
+                <Typography variant="h6" gutterBottom>
+                  Our Location
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  1234 Street Name, City, Country
+                </Typography>
+              </Card>
+            </Grid>
+          </Grid>
+        </Box>
+        
       </Container>
     </Box>
 
