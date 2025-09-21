@@ -1,5 +1,6 @@
 import { Card, Container, Grid, Typography } from '@mui/material';
 import { Box, Paper } from '@mui/material';
+import RoundedButton from '../components/Button';
 
 export default function Contact() {
   const contactName = "SCW International Certification Co., Ltd.";
@@ -24,8 +25,7 @@ export default function Contact() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'stretch',
-            mt: 4,
-            mb: 4,
+            mt: 2,
             gap: 2,
           }}
         >
@@ -34,10 +34,10 @@ export default function Contact() {
               <Paper
                 elevation={3}
                 sx={{
-                  flex: 2,
-                  minWidth: 300,
-                height: 400,
-                overflow: 'hidden',
+                  flex: 1,
+                  // minWidth: 200,
+                  height: 400,
+                  overflow: 'hidden',
               }}
             >
               <iframe
@@ -58,8 +58,10 @@ export default function Contact() {
               elevation={3}
               sx={{
                 flex: 1,
-                minWidth: 300,
+                // minWidth: 300,
+                height: 400,
                 p: 3,
+                pt: 2,
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
@@ -146,46 +148,31 @@ export default function Contact() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'stretch',
-            mt: 4,
+            mt: 2,
             mb: 4,
             gap: 2,
           }}
         >
           <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 2, md: 2 }}>
-            <Grid size={{ xs: 1, sm: 1, md: 1 }}>
-              <Card>
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-                  <a
-                    href="https://www.facebook.com/scwinternational"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ display: 'flex', alignItems: 'center', color: 'inherit', textDecoration: 'none' }}
-                    aria-label="Facebook"
-                  >
-                  <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 0 24 24" width="32">
-                      <path d="M0 0h24v24H0z" fill="none"/>
-                      <path fill="#143cb6ff" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.12 8.44 9.88v-6.99H7.9v-2.89h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.12 22 17 22 12z"/>
-                    </svg>
-                  </div>
-                  <div>
-                    <Typography variant="body2" sx={{ ml: 1 }}>
-                      scwinternational
-                    </Typography>
-                  </div>
-                  </a>
-                </Box>
-              </Card>
-            </Grid>
-            <Grid size={{ xs: 1, sm: 1, md: 1 }}>
-              <Card>
-                <Typography variant="h6" gutterBottom>
-                  Our Location
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  1234 Street Name, City, Country
-                </Typography>
-              </Card>
+            <Grid size={{ xs: 2, sm: 2, md: 2 }}>
+                <div style={{gap: 12, display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <RoundedButton
+                  children="Facebook"
+                  onClick={() => window.open("https://www.facebook.com/scwinternational", "_blank")}
+                />
+                <RoundedButton
+                  children= {<>Email</>}
+                  onClick={() =>
+                     window.location.href = 
+                     "mailto:chanyaporn@scw.co.th" +
+                     "?subject=Contact%20SCW%20International" 
+                  }
+                  style={{
+                    background: 'white',
+                    color: 'black',
+                  }}
+                />
+                </div>
             </Grid>
           </Grid>
         </Box>
