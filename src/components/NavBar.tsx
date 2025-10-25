@@ -1,4 +1,3 @@
-import { LogoDev } from "@mui/icons-material";
 import { AppBar, Toolbar, Typography, Button, Box, Drawer } from "@mui/material";
 import { Link as RouterLink } from 'react-router-dom';
 import { useState } from "react";
