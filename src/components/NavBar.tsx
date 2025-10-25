@@ -58,7 +58,6 @@ export default function NavBar() {
         sx={{ minWidth: 0, p: 0, display: 'flex', alignItems: 'center' }}
         aria-label="SCW Home"
         >
-        <LogoDev fontSize="large" color="inherit" />
         <Typography
           variant="h6"
           component="span"

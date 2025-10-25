@@ -1,10 +1,26 @@
-import { Card, Container, Grid, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import { Box, Paper } from '@mui/material';
 import RoundedButton from '../components/Button';
 
 export default function Contact() {
   const contactName = "SCW International Certification Co., Ltd.";
   const contactOwner = "Chanyaporn Wattanakitcharoenman";
+
+  const onClickEmail = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault(); // allow the href to serve as a non-JS fallback
+                    const to = encodeURIComponent('chanyaporn@scw.co.th');
+                    const subject = encodeURIComponent('Contact SCW International');
+                    const body = encodeURIComponent('');
+                    const outlookUrl = `https://outlook.office.com/mail/deeplink/compose?to=${to}&subject=${subject}&body=${body}`;
+
+                    // Basic detection: Windows + Edge (adjust if you need finer granularity)
+                    const ua = navigator.userAgent || '';
+                    const isWindowsEdge = /Windows/.test(ua) && /Edg/.test(ua);
+
+                    const urlToOpen = isWindowsEdge ? outlookUrl : `mailto:chanyaporn@scw.co.th?subject=${subject}&body=${body}`;
+                    window.open(urlToOpen, '_blank', 'noopener,noreferrer');
+  }
+
   return (
     <Box sx={{
           background: 'linear-gradient(to bottom, #ffffff 0%, #e3f2fd 100%)',
@@ -92,7 +108,18 @@ export default function Contact() {
                   <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
                 </Box>
-                <a href="mailto:chanyaporn@scw.co.th" style={{ color: 'inherit', textDecoration: 'none' }}>
+                {/* <a href="mailto:chanyaporn@scw.co.th" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  chanyaporn@scw.co.th
+                </a> */}
+                <a
+                  href={`mailto:chanyaporn@scw.co.th?subject=${encodeURIComponent('Contact SCW International')}`}
+                  onClick={(e: React.MouseEvent<HTMLElement>) => {
+                    onClickEmail(e);
+                  }}
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   chanyaporn@scw.co.th
                 </a>
                 </Typography>
@@ -156,22 +183,20 @@ export default function Contact() {
           <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 2, md: 2 }}>
             <Grid size={{ xs: 2, sm: 2, md: 2 }}>
                 <div style={{gap: 12, display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
-                <RoundedButton
+                  <RoundedButton
                   children="Facebook"
                   onClick={() => window.open("https://www.facebook.com/scwinternational", "_blank")}
-                />
-                <RoundedButton
-                  children= {<>Email</>}
-                  onClick={() =>
-                     window.location.href = 
-                     "mailto:chanyaporn@scw.co.th" +
-                     "?subject=Contact%20SCW%20International" 
-                  }
+                  />
+                  <RoundedButton
+                  children={<>Email</>}
+                  onClick={(e: React.MouseEvent<HTMLElement>) => {
+                    onClickEmail(e);
+                  }}
                   style={{
                     background: 'white',
                     color: 'black',
                   }}
-                />
+                  />
                 </div>
             </Grid>
           </Grid>
