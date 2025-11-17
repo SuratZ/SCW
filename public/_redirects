@@ -1,0 +1,4 @@
+# Redirect /scw to /scw/ (for Netlify and similar platforms)
+/scw /scw/ 301
+# Handle React Router paths
+/scw/* /scw/index.html 200

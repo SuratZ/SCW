@@ -42,8 +42,7 @@ export default function About() {
                         // mr: 10,
                     }}
                 >
-                    <Typography color="text.secondary" variant="body2" align="left" fontSize={16} paragraph
-                    >
+                    <Typography color="text.secondary" variant="body2" align="left" fontSize={16}>
 
                         SCW  International Certification Co., Ltd.  ก่อตั้งเมื่อวันที่ 4 ธันวาคม พ.ศ. 2544 ทำธุรกิจบริการให้การตรวจรับรองระบบมาตรฐาน สามารถออกใบรับรองระบบ ISO 9001, ระบบสิ่งแวดล้อม ISO 14001, ความปลอดภัยและอาชีวอนามัย
                         ISO 45001, ความปลอดภัยทางอาหาร GHPs/HACCP, ISO 22000, FSSC 22000, เครื่องมือแพทย์ ISO 13485 จาก LMS Assessments Limited    ซึ่งได้รับการรับรองจาก SCC, แคนาดา และจาก LMS,  EGAC  สามารถสืบค้นข้อมูลการรับรองใน website ของ LMS (บริษัทแม่) และ website ของ IAF ซึ่งเป็นหลักการแสดงสถานะของใบรับรองที่ถูกต้องตามหลักสากล เพื่อขยายโอกาสทางการตลาดของสินค้าในประเทศและต่างประเทศ

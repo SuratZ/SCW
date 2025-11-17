@@ -18,7 +18,6 @@ type SheetData = {
     [key: string]: string;
 };
 
-// const GOOGLE_SHEET_API_URL = 'https://sheets.googleapis.com/v4/spreadsheets/YOUR_SHEET_ID/values/Sheet1?key=YOUR_API_KEY';
 const sheetId = '1O6uJI7KtabX3XVPrlwT8_GTe1OaM_Ldm22RkMiq-c_g'; // replace with your Google Sheet ID
 const GOOGLE_SHEET_API_URL =`https://opensheet.elk.sh/${sheetId}/1`; // change to index of your sheet.
 

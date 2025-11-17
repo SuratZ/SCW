@@ -1,0 +1,8 @@
+# Redirect /scw to /scw/ (for Apache servers)
+RewriteEngine On
+RewriteRule ^scw$ /scw/ [R=301,L]
+
+# Handle React Router paths
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^scw/(.*)$ /scw/index.html [L]
