@@ -27,15 +27,28 @@ export default function Home() {
       </Container>
     </Box>
 
-    <Box  sx={{
-      display: "flex",
-      textAlign: 'center',
-      alignItems: "center", // vertical centering
+    <Box sx={{
+      minHeight: 'md',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-start', // top aligned
       py: 5,
+      px: 50,
     }}>
-      <Container sx={{ justifyContent: "center", dflexDirection: "column"}}>
-        <Typography variant="h3" gutterBottom sx={{fontFamily: 'Roboto', fontWeight: 'bold'}}>
-          ayayayayayayayayayaya
+      <Container sx={{ width: '48%' }}>
+        <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
+          QUALITY POLICY
+        </Typography>
+      </Container>
+      <Container sx={{ width: '50%' }}>
+        <Typography variant="body1" sx={{ whiteSpace: 'pre-line' }}>
+          <li>Ensure only competent auditors are selected for the respective audit schemes.</li>
+          <li>Ensure that impartiality of our certification is protected.</li>
+          <li>Ensure that certified client's certification do not exceed the due date.</li>
+          <li>Ensure fast response to client's feedback and communicate effectively.</li>
+          <li>Comply with  compliance obligations which is applicable for our business.</li>
+          <li>Continually improve our certification business by ensuring its cost effectiveness.</li>
+          <li>Provide ISO certificates to clients within 5 weeks of successful completion of audits of the respective schemes.</li>
         </Typography>
       </Container>
     </Box>
@@ -64,13 +77,12 @@ export default function Home() {
         </Typography>
       </Container>
       <Container sx={{ width: '48%' }}>
-        <Typography variant="body1" sx={{ whiteSpace: 'pre-line' }}>
-          {"SCW International Certification Co., Ltd. Established since 4/12/2001, operating in the business of providing certification services"}
-          {", ISO 9001, ISO 14001 environmental system, ISO 14001 environmental system, occupational health and safety, ISO 45001, food safety, "}
-          {"GHPs/HACCP, ISO 22000, FSSC 22000, medical equipment ISO 13485 from LMS Assessments Limited, which is certified by SCC, Canada "}
-          {"and from LMS, EGAC can search for certification information on the LMS website (parent company) and IAF's website, which is the principle of "}
-          {"showing the status of the certificate that is valid according to international principles. To expand market opportunities for domestic and international products.\n\n "}
-          {"Currently, more than 200 companies have issued ISO standard system certification for all systems in Thailand."}
+        <Typography variant="body1" sx={{ whiteSpace: 'pre-line', textAlign: 'justify' }}>
+          SCW International Certification Co., Ltd. Established since 4/12/2001, operating in the business of providing certification services
+          , ISO 9001, ISO 14001 environmental system, ISO 14001 environmental system, occupational health and safety, ISO 45001, food safety, 
+          GHPs/HACCP, ISO 22000, FSSC 22000, medical equipment ISO 13485 from LMS Assessments Limited, which is certified by SCC, Canada 
+          and from LMS, EGAC can search for certification information on the LMS website (parent company) and IAF's website, which is the principle of 
+          showing the status of the certificate that is valid according to international principles. To expand market opportunities for domestic and international products.
         </Typography>
       </Container>
     </Box>
@@ -122,11 +134,11 @@ export default function Home() {
       justifyContent: 'center',
       alignItems: "center", // vertical centering
     }}>
-      <Container sx={{ justifyContent: "center"}}>
+      <Container sx={{ height: '30vh'}}>
         <Typography color="black" variant="h3" gutterBottom sx={{fontFamily: 'Roboto', fontWeight: 'bold'}}>
           READY TO ELEVATE YOUR BUSINESS?
         </Typography>
-        <Button variant='contained' component={RouterLink} to="/contact">Click Me</Button>
+        <Button variant='contained' component={RouterLink} to="/contact">Contact us</Button>
       </Container>
     </Box>
     </>

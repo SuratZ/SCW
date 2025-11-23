@@ -1,14 +1,3 @@
-// /d:/Coding/SCG/src/constants/isoCertifications.ts
-//
-// Notes:
-// - Put plain constants and types in a .ts file. Use .tsx only if the file contains JSX.
-// - Export named values so you can import them from .ts or .tsx files.
-//
-// Example imports:
-// import { ISO_CERTIFICATIONS, getCertificationById } from 'src/constants/isoCertifications';
-// // or using relative path:
-// import { ISO_CERTIFICATIONS } from '../../constants/isoCertifications';
-
 export type Certification = {
     id: string;
     name: string;

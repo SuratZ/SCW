@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import NavBar from './components/NavBar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Footer from './components/Footer';
-import VerifiyCert from './pages/VerifiyCert';
-import Certification from './pages/Certification';
-import Contact from './pages/Contact';
+import NavBar from './component/NavBar';
+import Home from './page/Home';
+import About from './page/About';
+import Footer from './component/Footer';
+import VerifiyCert from './page/VerifiyCert';
+import Certification from './page/Certification';
+import Contact from './page/Contact';
 
 export default function App() {
   // Redirect users from /scw to /scw/ if they land on the wrong URL

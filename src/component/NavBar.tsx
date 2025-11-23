@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const menuItems = [
   {
-    label: "About us",
+    label: "About",
     path: "/about",
   },
   {
@@ -47,7 +47,7 @@ export default function NavBar() {
 
   
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={{bgcolor: '#012C4E', color: '#EAD292'}}>
       <Toolbar>
       <Box sx={{ flex: 3, display: 'flex', alignItems: 'center', gap: 1 }}>
         <Button
