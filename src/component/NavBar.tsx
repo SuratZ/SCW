@@ -54,15 +54,12 @@ export default function NavBar() {
         color="inherit"
         component={RouterLink}
         to="/home"
-        sx={{ alignContent: 'center'}}
+        sx={{ textTransform: 'none' }}
         aria-label="SCW Home"
         >
-          <Container sx={{
-            ml: 1,
-          }}>
-            <Box component="span" sx={{ display: { xs: 'inline', sm: 'inline', md: 'none' } }}>
-              SCW
-            </Box>
+                  <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, borderRadius: '50%' }} />
+
+          <Container sx={{}}>
             <Box component="span" sx={{ display: { xs: 'none', sm: 'none', md: 'inline' }, fontWeight: 'bold', fontSize: 24}}>
               {/* <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, marginRight: 8 }} /> */}
               SCW Certification
