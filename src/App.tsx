@@ -18,16 +18,16 @@ export default function App() {
   }, []);
   
   return (
-    <Router basename="/scw/">
+    <Router basename="/scw">
       <NavBar />
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/certificate" element={<Certification />} />
-        <Route path="/verify-cert" element={<VerifiyCert />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* Redirect any unmatched routes to home */}
-        <Route path="*" element={<Navigate to="/home" replace />} />
+      <Route path="home" element={<Home />} />
+      <Route path="about" element={<About />} />
+      <Route path="certificate" element={<Certification />} />
+      <Route path="verify-cert" element={<VerifiyCert />} />
+      <Route path="contact" element={<Contact />} />
+      {/* Redirect any unmatched routes to home */}
+      <Route path="*" element={<Navigate to="home" replace />} />
       </Routes>
       <Footer />
     </Router>

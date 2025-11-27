@@ -1,27 +1,30 @@
 import { Box, Button, Container, Typography } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
+import "./style.css";
 
 export default function Home() {
   return (
     <>
     <Box sx={{
       // background: 'linear-gradient(to right, #e3f2fd 0%, #ffffff 50%, #e3f2fd 100%)',
-      backgroundImage: 'url(./images/cat1.png)',
+      backgroundImage: 'url(./images/meeting.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
       backgroundRepeat: 'no-repeat',
+      backgroundColor: 'rgba(0, 0, 0, 0.16)',
+      backgroundBlendMode: 'overlay',
       // backgroundPositionY: '70%',
       minHeight: '90vh',
       display: "flex",
       textAlign: 'center',
       alignItems: "center", // vertical centering
     }}>
-      <Container sx={{ justifyContent: "center", dflexDirection: "column"}}>
-        <Typography color="white" variant="h3" gutterBottom sx={{fontFamily: 'Roboto', fontWeight: 'bold'}}>
+      <Container sx={{ justifyContent: "center", dflexDirection: "column", color: 'white'}}>
+        <Typography  variant="h3" gutterBottom sx={{fontFamily: 'Roboto', fontWeight: 'bold'}}>
           SCW International Certification
         </Typography>
-        <Typography color="white" variant="h6" gutterBottom>
+        <Typography  variant="h6" gutterBottom>
           Your trusted partner for ISO certifications and quality assurance.
         </Typography>
       </Container>
@@ -33,10 +36,10 @@ export default function Home() {
       justifyContent: 'space-between',
       alignItems: 'flex-start', // top aligned
       py: 5,
-      px: 50,
+      px: 20,
     }}>
       <Container sx={{ width: '48%' }}>
-        <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
+        <Typography variant="h4" sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
           QUALITY POLICY
         </Typography>
       </Container>
@@ -53,7 +56,7 @@ export default function Home() {
       </Container>
     </Box>
     <Box sx={{
-      backgroundImage: 'url(./images/cat2.png)',
+      backgroundImage: 'url(./images/handshake.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -69,7 +72,7 @@ export default function Home() {
       justifyContent: 'space-between',
       alignItems: 'flex-start', // top aligned
       py: 5,
-      px: 50,
+      px: 20,
     }}>
       <Container sx={{ width: '48%' }}>
         <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
@@ -87,7 +90,7 @@ export default function Home() {
       </Container>
     </Box>
     <Box sx={{
-      backgroundImage: 'url(./images/cat3.png)',
+      backgroundImage: 'url(./images/writing.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -103,7 +106,7 @@ export default function Home() {
       justifyContent: 'space-between',
       alignItems: 'flex-start', // top aligned
       py: 5,
-      px: 50,
+      px: 20,
     }}>
       <Container sx={{ width: '48%' }}>
         <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
@@ -123,18 +126,20 @@ export default function Home() {
       </Container>
     </Box>
     <Box sx={{
-      backgroundImage: 'url(./images/cat4.png)',
+      backgroundImage: 'url(./images/zooming.jpg)',
       backgroundSize: 'auto',
-      backgroundPosition: 'center',
+      backgroundPosition: '10% 50%',
       backgroundAttachment: 'fixed',
       backgroundRepeat: 'no-repeat',
+      backgroundColor: 'rgba(0, 0, 0, 0.30)',
+      backgroundBlendMode: 'overlay',
       minHeight: '90vh',
       display: "flex",
       textAlign: 'center',
       justifyContent: 'center',
       alignItems: "center", // vertical centering
     }}>
-      <Container sx={{ height: '30vh'}}>
+      <Container sx={{ height: '20vh'}}>
         <Typography color="black" variant="h3" gutterBottom sx={{fontFamily: 'Roboto', fontWeight: 'bold'}}>
           READY TO ELEVATE YOUR BUSINESS?
         </Typography>

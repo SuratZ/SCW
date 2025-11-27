@@ -1,4 +1,4 @@
-import { AppBar, Toolbar, Typography, Button, Box, Drawer } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Box, Drawer, Container } from "@mui/material";
 import { Link as RouterLink } from 'react-router-dom';
 import { useState } from "react";
 
@@ -49,28 +49,25 @@ export default function NavBar() {
   return (
     <AppBar position="sticky" sx={{bgcolor: '#012C4E', color: '#EAD292'}}>
       <Toolbar>
-      <Box sx={{ flex: 3, display: 'flex', alignItems: 'center', gap: 1 }}>
+      <Box sx={{ flex: 3, display: 'flex' }}>
         <Button
         color="inherit"
         component={RouterLink}
-        to="/"
-        sx={{ minWidth: 0, p: 0, display: 'flex', alignItems: 'center' }}
+        to="/home"
+        sx={{ alignContent: 'center'}}
         aria-label="SCW Home"
         >
-        <Typography
-          variant="h6"
-          component="span"
-          sx={{
+          <Container sx={{
             ml: 1,
-          }}
-        >
-          <Box component="span" sx={{ display: { xs: 'inline', sm: 'inline', md: 'none' } }}>
-            SCW
-          </Box>
-          <Box component="span" sx={{ display: { xs: 'none', sm: 'none', md: 'inline' } }}>
-            SCW Certification
-          </Box>
-        </Typography>
+          }}>
+            <Box component="span" sx={{ display: { xs: 'inline', sm: 'inline', md: 'none' } }}>
+              SCW
+            </Box>
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'none', md: 'inline' }, fontWeight: 'bold', fontSize: 24}}>
+              {/* <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, marginRight: 8 }} /> */}
+              SCW Certification
+            </Box>
+          </Container>
         </Button>
       </Box>
       <Box
