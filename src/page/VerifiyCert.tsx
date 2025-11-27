@@ -99,20 +99,22 @@ const VerifiyCert: React.FC = () => {
     {
       field: "serialNoThai",
       headerName: "Certificate No.",
-      width: 150,
+      width: 150, sortable: false,
       disableColumnMenu: true,
     },
     {
       field: "sysOfCert",
       headerName: "Standard",
-      width: 150,
+      width: 150, sortable: false,
       disableColumnMenu: true,
     },
-    { field: "expiredDate", headerName: "Expiry Date", width: 150 },
+    { field: "expiredDate", 
+      headerName: "Expiry Date", 
+      width: 150, sortable: false,},
     {
       field: "status",
       headerName: "Status",
-      width: 100,
+      width: 100, sortable: false,
       disableColumnMenu: true,
     },
     {
@@ -298,7 +300,6 @@ const VerifiyCert: React.FC = () => {
               <Container
                 sx={{
                   display: "flex",
-                  minHeight: "55vh",
                 }}
               >
                   {result && (
