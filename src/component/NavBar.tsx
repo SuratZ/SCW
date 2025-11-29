@@ -1,6 +1,7 @@
-import { AppBar, Toolbar, Typography, Button, Box, Drawer, Container } from "@mui/material";
+import { AppBar, Toolbar, Typography, Button, Box, Drawer, Container, IconButton } from "@mui/material";
 import { Link as RouterLink } from 'react-router-dom';
 import { useState } from "react";
+import { PhoneInTalk } from "@mui/icons-material";
 
 const menuItems = [
   {
@@ -97,8 +98,17 @@ export default function NavBar() {
           <span style={{ fontSize: 24 }}>☰</span>
         </Button>
       </Box>
-      <Box sx={{ flex: 3, display: 'flex', justifyContent: 'flex-end' }}>
-        {/* <Button color="inherit">Login</Button> */}
+      <Box sx={{ flex: 3, display: 'flex', justifyContent: ['flex-end','flex-end','flex-end',"flex-start"] }}>
+        <Button
+        variant="contained"
+        color="error"
+        href="tel:+66816455821"
+        sx={{ textTransform: 'none',whiteSpace: ['nowrap','pre-wrap'],pr:[2,2] }}
+        aria-label="Call SCW"
+        >
+          <Box sx={{display:['none','block'],position: 'relative', top: '3px'}}><PhoneInTalk /></Box>
+          <Box>{"  Call Now"}</Box>
+        </Button>      
       </Box>
       <Drawer
         anchor="left"
