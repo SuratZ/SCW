@@ -15,5 +15,5 @@ export default defineConfig({
       }
     }
   ],
-  base: '/scw/',  // 👈 important!
+  base: '/',  // 👈 important!
 })

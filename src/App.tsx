@@ -18,7 +18,7 @@ export default function App() {
   }, []);
   
   return (
-    <Router basename="/scw">
+    <Router basename="/">
       <NavBar />
       <Routes>
       <Route path="home" element={<Home />} />
