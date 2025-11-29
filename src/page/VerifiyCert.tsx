@@ -314,7 +314,9 @@ const VerifiyCert: React.FC = () => {
           className="modal-overlay"
         >
           <Card className="modal-content">
-            <CardContent>
+            <CardContent sx={{                  
+                  maxHeight: "80vh",
+                  overflow: "scroll",}}>
               <Box sx={{ position: "absolute", top: 20, right: 20 }}>
                 <IconButton
                   aria-label="close"

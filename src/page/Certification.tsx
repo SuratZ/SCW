@@ -190,7 +190,7 @@ export default function Certification() {
                 variant="body1"
                 component="div"
                 sx={{
-                  marginTop: 2,
+                  mt: 2,
                   whiteSpace: "pre-wrap",
                   maxHeight: "60vh",
                   overflow: "scroll",
