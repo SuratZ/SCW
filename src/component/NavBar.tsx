@@ -57,10 +57,9 @@ export default function NavBar() {
         sx={{ textTransform: 'none' }}
         aria-label="SCW Home"
         >
-                  <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, borderRadius: '50%' }} />
-
+          <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, borderRadius: '50%' }} />
           <Container sx={{}}>
-            <Box component="span" sx={{ display: { xs: 'none', sm: 'inline', md: 'inline' }, fontWeight: 'bold', fontSize: 24}}>
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'inline', md: 'inline',lg: 'none' }, fontWeight: 'bold', fontSize: 24}}>
               {/* <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, marginRight: 8 }} /> */}
               SCW 
             </Box>
