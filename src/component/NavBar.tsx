@@ -60,7 +60,11 @@ export default function NavBar() {
                   <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, borderRadius: '50%' }} />
 
           <Container sx={{}}>
-            <Box component="span" sx={{ display: { xs: 'none', sm: 'none', md: 'inline' }, fontWeight: 'bold', fontSize: 24}}>
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'inline', md: 'inline' }, fontWeight: 'bold', fontSize: 24}}>
+              {/* <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, marginRight: 8 }} /> */}
+              SCW 
+            </Box>
+            <Box component="span" sx={{ display: { xs: 'none', sm: 'none', md: 'none', lg: 'inline' }, fontWeight: 'bold', fontSize: 24}}>
               {/* <img src="./scw-logo.jpg" alt="SCW Logo" style={{ height: 40, width: 40, marginRight: 8 }} /> */}
               SCW Certification
             </Box>

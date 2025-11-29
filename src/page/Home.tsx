@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <>
     <Box sx={{
-      // background: 'linear-gradient(to right, #e3f2fd 0%, #ffffff 50%, #e3f2fd 100%)',
       backgroundImage: 'url(./images/meeting.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
@@ -14,8 +13,7 @@ export default function Home() {
       backgroundRepeat: 'no-repeat',
       backgroundColor: 'rgba(0, 0, 0, 0.16)',
       backgroundBlendMode: 'overlay',
-      // backgroundPositionY: '70%',
-      minHeight: '90vh',
+      minHeight: ['90vh'],
       display: "flex",
       textAlign: 'center',
       alignItems: "center", // vertical centering
@@ -30,20 +28,23 @@ export default function Home() {
       </Container>
     </Box>
 
-    <Box sx={{
-      minHeight: 'md',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start', // top aligned
+    <Container sx={{
+      display: ['','flex'],
       py: 5,
-      px: 20,
     }}>
-      <Container sx={{ width: '48%' }}>
+      <Box sx={{
+        px: [3, 2, 1, 0],
+        width: [1,0.5],
+        pb: [2,0]
+      }}>
         <Typography variant="h4" sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
           QUALITY POLICY
         </Typography>
-      </Container>
-      <Container sx={{ width: '50%' }}>
+      </Box>
+      <Box sx={{
+        px: [3, 2, 1, 0],
+        width: [1,0.5]
+      }}>
         <Typography variant="body1" sx={{ whiteSpace: 'pre-line' }}>
           <li>Ensure only competent auditors are selected for the respective audit schemes.</li>
           <li>Ensure that impartiality of our certification is protected.</li>
@@ -53,33 +54,36 @@ export default function Home() {
           <li>Continually improve our certification business by ensuring its cost effectiveness.</li>
           <li>Provide ISO certificates to clients within 5 weeks of successful completion of audits of the respective schemes.</li>
         </Typography>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
     <Box sx={{
       backgroundImage: 'url(./images/handshake.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
       backgroundRepeat: 'no-repeat',
-      minHeight: '60vh',
+      minHeight: ['30vh','60vh'],
       display: "flex",
       textAlign: 'center',
       alignItems: "center", // vertical centering
     }}/>
-    <Box sx={{
-      minHeight: 'auto',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start', // top aligned
+    <Container sx={{
+      display: ['','flex'],
       py: 5,
-      px: 20,
     }}>
-      <Container sx={{ width: '48%' }}>
+      <Box sx={{
+        px: [3, 2, 1, 0],
+        width: [1,0.5],
+        pb: [2,0]
+      }}>
         <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
           ABOUT OUR COMPANY
         </Typography>
-      </Container>
-      <Container sx={{ width: '48%' }}>
+      </Box>
+      <Box sx={{
+        px: [3, 2, 1, 0],
+        width: [1,0.5]
+      }}>
         <Typography variant="body1" sx={{ whiteSpace: 'pre-line', textAlign: 'justify' }}>
           SCW International Certification Co., Ltd. Established since 4/12/2001, operating in the business of providing certification services
           , ISO 9001, ISO 14001 environmental system, ISO 14001 environmental system, occupational health and safety, ISO 45001, food safety, 
@@ -87,33 +91,36 @@ export default function Home() {
           and from LMS, EGAC can search for certification information on the LMS website (parent company) and IAF's website, which is the principle of 
           showing the status of the certificate that is valid according to international principles. To expand market opportunities for domestic and international products.
         </Typography>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
     <Box sx={{
       backgroundImage: 'url(./images/writing.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
       backgroundRepeat: 'no-repeat',
-      minHeight: '80vh',
+      minHeight: ['30vh','60vh'],
       display: "flex",
       textAlign: 'center',
       alignItems: "center", // vertical centering
     }}/>
-    <Box sx={{
-      minHeight: '20vh',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'flex-start', // top aligned
+    <Container sx={{
+      display: ['','flex'],
       py: 5,
-      px: 20,
     }}>
-      <Container sx={{ width: '48%' }}>
+      <Box sx={{
+        px: [3, 2, 1, 0],
+        width: [1,0.5],
+        pb: [2,0]
+      }}>
         <Typography variant="h4" gutterBottom sx={{ fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center' }}>
           OUR SERVICES
         </Typography>
-      </Container>
-      <Container sx={{ width: '50%' }}>
+      </Box>
+      <Box sx={{
+        px: [3, 2, 1, 0],
+        width: [1,0.5]
+      }}>
         <Typography variant="body1" sx={{ whiteSpace: 'pre-line' }}>
           <li>ISO 9001:2015 Quality Management Systems</li>
           <li>ISO 13485:2016 Medical Devices Quality Management Systems</li>
@@ -123,8 +130,8 @@ export default function Home() {
           <li>FSSC 22000</li>
           <li>GHPs/HACCP</li>
         </Typography>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
     <Box sx={{
       backgroundImage: 'url(./images/zooming.webp)',
       backgroundSize: '200%',
@@ -133,15 +140,22 @@ export default function Home() {
       backgroundRepeat: 'no-repeat',
       backgroundColor: 'rgba(0, 0, 0, 0.30)',
       backgroundBlendMode: 'overlay',
-      minHeight: '90vh',
+      minHeight: ['100vh'],
       display: "flex",
       textAlign: 'center',
       justifyContent: 'center',
       alignItems: "center", // vertical centering
     }}>
-      <Container sx={{ height: '20vh'}}>
-        <Typography color="black" variant="h3" gutterBottom sx={{fontFamily: 'Roboto', fontWeight: 'bold'}}>
-          READY TO ELEVATE YOUR BUSINESS?
+      <Container sx={{ 
+        backgroundColor: 'rgba(0, 0, 0, 0.30)',
+        backgroundBlendMode: 'overlay',
+        py: 3
+      }}>
+        <Typography color="black" variant="h3" gutterBottom 
+        sx={{
+          fontFamily: 'Roboto', fontWeight: 'bold', color: 'white', textAlign: 'center', mb: [3,4]      
+        }}>
+          READY TO ELEVATE YOUR BUSINESS ?
         </Typography>
         <Button variant='contained' component={RouterLink} to="/contact">Contact us</Button>
       </Container>

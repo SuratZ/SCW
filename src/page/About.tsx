@@ -8,11 +8,9 @@ export default function About() {
       <Container
         sx={{
           justifyContent: "row",
-          display: "flex",
-          pt: 6,
-          minHeight: "md",
-          maxWidth: "md",
-          gap: 10,
+          display: ['',"flex"],
+          pt: 4,
+          gap: [0,4],
         }}
       >
         <Box
@@ -20,7 +18,7 @@ export default function About() {
             pb: 0,
             flexDirection: "column",
             justifyContent: "center",
-            width: "70%",
+             width: [1,0.7],
           }}
         >
           <Box sx={{ height: "auto", pb: 4 }}>
@@ -72,17 +70,8 @@ export default function About() {
               opportunities for domestic and international products
             </Typography>
           </Box>
-          {/* <Box sx={{ pt:4,height: 'auto', pb: 10}}>
-                    <Typography color="black" variant="h3" gutterBottom sx={{fontFamily: 'Roboto', fontWeight: 'bold', textAlign: 'center', fontSize: 24, pb: 2}}>
-                        BUSINESS PARTNERS
-                    </Typography>
-                    <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
-                        <a href="https://www.lmscert.com/" target="_blank" rel="noopener noreferrer"><img src='./images/LMS.jpg' alt='LMS logo' style={{ height: '10vh', border: '10px solid #0e0e0e', borderRadius: '10px'}} /></a>
-                        <a href="https://qfscerts.com/" target="_blank" rel="noopener noreferrer"><img src='./images/QFS.png' alt='QFS logo' style={{height: '10vh',border: '4px solid whitesmoke', paddingRight: '10px', borderRadius: '10px'}} /></a>
-                    </Box>
-                </Box> */}
         </Box>
-        <Box sx={{ height: "20vh", width: "30%" }}>
+        <Box sx={{ width: [1,0.3] }}>
           <Typography
             color="black"
             variant="h3"
@@ -101,7 +90,7 @@ export default function About() {
           <InfoCompany />
         </Box>
       </Container>
-      <Container sx={{ pb: 0, borderTop: "1px solid #012C4E" }}>
+      <Container sx={{ mt:[4,0] , borderTop: "1px solid #012C4E" }}>
         <Box sx={{ pt: 4, height: "auto", pb: 10 }}>
           <Typography
             className="navy-text"
@@ -110,19 +99,19 @@ export default function About() {
             sx={{
               fontFamily: "Roboto",
               fontWeight: "bold",
-              textAlign: "center",
+              textAlign: ["start","center"],
               fontSize: 24,
-              pb: 2,
+              pb: [1,2],
             }}
           >
             BUSINESS PARTNERS
           </Typography>
           <Box
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 10,
+              display: ["", "flex"],
+              justifyContent: ["","center"],
+              // alignItems: "center",
+              gap: 5,
             }}
           >
             <a

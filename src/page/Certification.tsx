@@ -5,10 +5,11 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Box,
   Modal,
-  Button,
+  IconButton,
+  Box,
 } from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
 import React from "react";
 import "../component/modal.css";
 import {
@@ -87,17 +88,13 @@ export default function Certification() {
     <>
       <Container
         sx={{
-          // background: 'linear-gradient(to bottom, #ffffff 90%, #e7b535dc 100%)',
           display: "flex",
-          height: "100%",
-          width: "100%",
         }}
       >
-        <Box
+        <Container
           sx={{
             textAlign: "center",
-            pb: 10,
-            mb: 4,
+            pb: 10
           }}
         >
           <Typography
@@ -105,11 +102,11 @@ export default function Certification() {
             variant="h6"
             gutterBottom
             sx={{
-              textAlign: 'center ',
+              textAlign: 'center',
               fontFamily: "Roboto",
               fontWeight: "bold",
               pb: 2,
-              pt: 6,
+              pt: [ 2,4 ],
               fontSize: 24,
             }}
           >
@@ -150,7 +147,7 @@ export default function Certification() {
               </Grid>
             ))}
           </Grid>
-        </Box>
+        </Container>
       </Container>
       {openModal && selectedCert !== null && (
         <Modal
@@ -160,23 +157,19 @@ export default function Certification() {
         >
           <Card className="modal-content">
             <CardContent style={{ maxHeight: "80vh" }}>
-              <Box sx={{ position: "absolute", top: 8, right: 8 }}>
-                <Button
-                  onClick={() => setOpenModal(false)}
-                  aria-label="Close modal"
-                  title="Close"
-                  style={{
-                    background: "transparent",
-                    border: "none",
-                    cursor: "pointer",
-                    fontSize: 24,
-                    lineHeight: 1,
-                    padding: 12,
+              <Box sx={{ position: "absolute", top: 20, right: 20 }}>
+                <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => {
+                    setOpenModal(false);
                   }}
                 >
-                  ×
-                </Button>
+                  <CloseIcon fontSize="inherit" />
+                </IconButton>
               </Box>
+              
               <Typography
                 variant="h5"
                 component="div"
