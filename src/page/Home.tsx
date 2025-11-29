@@ -7,7 +7,7 @@ export default function Home() {
     <>
     <Box sx={{
       // background: 'linear-gradient(to right, #e3f2fd 0%, #ffffff 50%, #e3f2fd 100%)',
-      backgroundImage: 'url(./images/meeting.jpg)',
+      backgroundImage: 'url(./images/meeting.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -56,7 +56,7 @@ export default function Home() {
       </Container>
     </Box>
     <Box sx={{
-      backgroundImage: 'url(./images/handshake.jpg)',
+      backgroundImage: 'url(./images/handshake.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -90,7 +90,7 @@ export default function Home() {
       </Container>
     </Box>
     <Box sx={{
-      backgroundImage: 'url(./images/writing.jpg)',
+      backgroundImage: 'url(./images/writing.webp)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundAttachment: 'fixed',
@@ -126,9 +126,9 @@ export default function Home() {
       </Container>
     </Box>
     <Box sx={{
-      backgroundImage: 'url(./images/zooming.jpg)',
-      backgroundSize: 'auto',
-      backgroundPosition: '10% 50%',
+      backgroundImage: 'url(./images/zooming.webp)',
+      backgroundSize: '200%',
+      backgroundPosition: '00% 55%',
       backgroundAttachment: 'fixed',
       backgroundRepeat: 'no-repeat',
       backgroundColor: 'rgba(0, 0, 0, 0.30)',

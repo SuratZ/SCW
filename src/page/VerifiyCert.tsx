@@ -249,7 +249,7 @@ const VerifiyCert: React.FC = () => {
           </Container>
         </Container>
       </Container>
-      <Container sx={{ display: 'flex', justifyContent: 'center' }}>
+      <Container sx={{ display: 'flex', minHeight: '60vh', justifyContent: 'center' }}>
         <Paper sx={{ height: 400, width: '90%'}}>
           <DataGrid
             rows={rows}
@@ -299,7 +299,7 @@ const VerifiyCert: React.FC = () => {
               </Typography>
               <Container
                 sx={{
-                  display: "flex",
+                  display: "flex"
                 }}
               >
                   {result && (

@@ -21,15 +21,10 @@ export default function Contact() {
   }
 
   return (
-    <Box sx={{
-        display: "flex",
-        // alignItems: "center", // vertical centering
-        minHeight: "90vh", // full screen height
-      }}>
         <Container sx={{
+          minHeight: "90vh",
           textAlign: 'center',
-          pt: 6,  
-          pb: 2
+          pt: 6
         }}>
           <Typography            
             className="navy-text"
@@ -86,36 +81,33 @@ export default function Contact() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'stretch',
-            mt: 2,
-            mb: 4,
             gap: 2,
             pt: 4,
           }}
         >
           <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 2, sm: 2, md: 2 }}>
             <Grid size={{ xs: 2, sm: 2, md: 2 }}>
-                <div style={{gap: 12, display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                <Container sx={{gap: 2, display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
                   <RoundedButton
-                  children="Facebook"
-                  onClick={() => window.open("https://www.facebook.com/scwinternational", "_blank")}
-                  />
+                    onClick={() => window.open("https://www.facebook.com/scwinternational", "_blank")}
+                  >
+                    Facebook
+                  </RoundedButton>
                   <RoundedButton
-                  children={<>Email</>}
-                  onClick={(e: React.MouseEvent<HTMLElement>) => {
-                    onClickEmail(e);
-                  }}
-                  style={{
-                    background: 'white',
-                    color: 'black',
-                  }}
-                  />
-                </div>
+                    onClick={(e: React.MouseEvent<HTMLElement>) => {
+                      onClickEmail(e);
+                    }}
+                    style={{
+                      background: 'white',
+                      color: 'black',
+                    }}
+                  >
+                    Email
+                  </RoundedButton>
+                </Container>
             </Grid>
           </Grid>
         </Box>
-        
       </Container>
-    </Box>
-
   );
 }
