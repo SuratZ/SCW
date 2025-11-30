@@ -80,15 +80,15 @@ const VerifiyCert: React.FC = () => {
   };
 
   useEffect(() => {
-    fetch(GOOGLE_SHEET_API_URL)
-      .then((res) => res.json())
-      .then((rows) => {
-        const filterData = rows.filter(
-          (row: SheetData) =>
-            row.serialNoEng || row.serialNoThai || row.customerName
-        );
-        setData(filterData);
-      });
+    // fetch(GOOGLE_SHEET_API_URL)
+    //   .then((res) => res.json())
+    //   .then((rows) => {
+    //     const filterData = rows.filter(
+    //       (row: SheetData) =>
+    //         row.serialNoEng || row.serialNoThai || row.customerName
+    //     );
+    //     setData(filterData);
+    //   });
   }, []);
 
   const onClickView = (companyName: string) => {
@@ -147,12 +147,12 @@ const VerifiyCert: React.FC = () => {
     },
   ];
 
-  const rows = data.map((row, index) => ({
-    ...row,
-    id: index + 1,
-  }));
+  // const rows = data.map((row, index) => ({
+  //   ...row,
+  //   id: index + 1,
+  // }));
 
-  const paginationModel = { page: 0, pageSize: 5 };
+  // const paginationModel = { page: 0, pageSize: 5 };
 
   return (
     <>
@@ -296,7 +296,7 @@ const VerifiyCert: React.FC = () => {
         </Container>
       </Container>
       <Container sx={{ display: "flex", justifyContent: "center" }}>
-        <Paper sx={{ height: ["45vh","40vh"], width: ["90%", "90%",'auto'] }}>
+        {/* <Paper sx={{ height: ["45vh","40vh"], width: ["90%", "90%",'auto'] }}>
           <DataGrid
             rows={rows}
             columns={columns}
@@ -304,7 +304,7 @@ const VerifiyCert: React.FC = () => {
             pageSizeOptions={[5, 10]}
             sx={{ border: 0 }}
           />
-        </Paper>
+        </Paper> */}
       </Container>
 
       {openModal && result && (
