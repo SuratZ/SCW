@@ -9,12 +9,12 @@ import {
   Container,
   IconButton,
   Modal,
-  Paper,
+  // Paper,
   TextField,
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { DataGrid, type GridColDef } from "@mui/x-data-grid";
+// import { DataGrid, type GridColDef } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import "../component/modal.css";
@@ -36,8 +36,8 @@ type SheetData = {
   [key: string]: string;
 };
 
-const sheetId = "1O6uJI7KtabX3XVPrlwT8_GTe1OaM_Ldm22RkMiq-c_g"; // replace with your Google Sheet ID
-const GOOGLE_SHEET_API_URL = `https://opensheet.elk.sh/${sheetId}/1`; // change to index of your sheet.
+// const sheetId = "1O6uJI7KtabX3XVPrlwT8_GTe1OaM_Ldm22RkMiq-c_g"; // replace with your Google Sheet ID
+// const GOOGLE_SHEET_API_URL = `https://opensheet.elk.sh/${sheetId}/1`; // change to index of your sheet.
 
 const VerifiyCert: React.FC = () => {
   const [query, setQuery] = useState<string | null>("");
@@ -80,6 +80,7 @@ const VerifiyCert: React.FC = () => {
   };
 
   useEffect(() => {
+    setData([]);
     // fetch(GOOGLE_SHEET_API_URL)
     //   .then((res) => res.json())
     //   .then((rows) => {
@@ -91,61 +92,61 @@ const VerifiyCert: React.FC = () => {
     //   });
   }, []);
 
-  const onClickView = (companyName: string) => {
-    setResult(data.find((row) => row.customerName === companyName) || null);
-    setOpenModal(true);
-  };
+  // const onClickView = (companyName: string) => {
+  //   setResult(data.find((row) => row.customerName === companyName) || null);
+  //   setOpenModal(true);
+  // };
 
-  const columns: GridColDef[] = [
-    {
-      field: "customerName",
-      headerName: "Company Name",
-      width: 350,
-      disableColumnMenu: true,
-    },
-    {
-      field: "serialNoThai",
-      headerName: "Certificate No.",
-      width: 150,
-      sortable: false,
-      disableColumnMenu: true,
-    },
-    {
-      field: "sysOfCert",
-      headerName: "Standard",
-      width: 150,
-      sortable: false,
-      disableColumnMenu: true,
-    },
-    {
-      field: "expiredDate",
-      headerName: "Expiry Date",
-      width: 150,
-      sortable: false,
-    },
-    {
-      field: "status",
-      headerName: "Status",
-      width: 60,
-      sortable: false,
-      disableColumnMenu: true,
-    },
-    {
-      field: "",
-      headerName: "Action",
-      width: 80,
-      sortable: false,
-      disableColumnMenu: true,
-      renderCell: (params) => (
-        <Button
-          variant="contained"
-          onClick={onClickView.bind(null, params.row.customerName)}
-        >
-          View
-        </Button>
-      ),
-    },
-  ];
+  // const columns: GridColDef[] = [
+  //   {
+  //     field: "customerName",
+  //     headerName: "Company Name",
+  //     width: 350,
+  //     disableColumnMenu: true,
+  //   },
+  //   {
+  //     field: "serialNoThai",
+  //     headerName: "Certificate No.",
+  //     width: 150,
+  //     sortable: false,
+  //     disableColumnMenu: true,
+  //   },
+  //   {
+  //     field: "sysOfCert",
+  //     headerName: "Standard",
+  //     width: 150,
+  //     sortable: false,
+  //     disableColumnMenu: true,
+  //   },
+  //   {
+  //     field: "expiredDate",
+  //     headerName: "Expiry Date",
+  //     width: 150,
+  //     sortable: false,
+  //   },
+  //   {
+  //     field: "status",
+  //     headerName: "Status",
+  //     width: 60,
+  //     sortable: false,
+  //     disableColumnMenu: true,
+  //   },
+  //   {
+  //     field: "",
+  //     headerName: "Action",
+  //     width: 80,
+  //     sortable: false,
+  //     disableColumnMenu: true,
+  //     renderCell: (params) => (
+  //       <Button
+  //         variant="contained"
+  //         onClick={onClickView.bind(null, params.row.customerName)}
+  //       >
+  //         View
+  //       </Button>
+  //     ),
+  //   },
+  // ];
 
   // const rows = data.map((row, index) => ({
   //   ...row,
@@ -203,9 +204,9 @@ const VerifiyCert: React.FC = () => {
                 sx={{ width: ["auto", "50vh", "50vh"] }}
                 freeSolo
                 value={query}
-                onChange={(_, newValue: string | null) => {
-                  setQuery(newValue);
-                }}
+                // onChange={(_, newValue: string | null) => {
+                //   setQuery(newValue);
+                // }}
                 inputValue={inputValue}
                 onInputChange={(_, newInputValue) => {
                   setInputValue(newInputValue);
